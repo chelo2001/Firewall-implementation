@@ -35,3 +35,8 @@ Debido a que no hay reglas en el firewall que permitan el tráfico ICMP hacia es
 <p align="center">
   <em>Figura 3. Regla de firewall en la interfaz WAN de pfSense: se permite el tráfico ICMP (Pass) desde Kali (192.168.100.115) hacia la IP de la WAN (192.168.100.152) para habilitar el ping.</em>
 </p>
+
+Después de guardar la configuración y aplicar los cambios es posible hacer conexión con el firewall mediante el comando ping.
+
+
+
