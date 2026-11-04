@@ -16,3 +16,8 @@ Como se ve en la figura, la máquina Ubuntu tiene asignada una dirección IP med
   <em>Figura 2. Prueba de conectividad desde Ubuntu: ping a google.com con 0% de pérdida de paquetes, lo que confirma la resolución DNS y la salida a internet a través de pfSense.</em>
 </p>
 
+Como se aprecia, hay salida a internet y resolución DNS. 
+
+## Configuración de regla de paso de tráfico ICMP a través del firewall
+Al intentar hacer conexión al firewall pfsense a través de la máquina kali se aprecia que no llega ningún paquete.
+
