@@ -17,3 +17,5 @@ Una vez descargado el instalador, se debe descomprimir el archivo para obtener l
 <p align="center">
   <em>Figura 2. Menú de consola de pfSense con la WAN (em0) en 192.168.100.152/24 por DHCP y la LAN (em1) en 192.168.1.1/24.</em>
 </p>
+
+Como se observa en la figura, se aprecian 2 interfaces de red (que son las que se configuraron anteriormente antes de arrancar la máquina con la iso). En este caso, cada una tiene asignada una dirección ip mediante protocolo DHCP. En el caso de que no se tenga dirección ip en alguna interfaz, se puede solicitar mediante protocolo DHCP con la opción 2.
