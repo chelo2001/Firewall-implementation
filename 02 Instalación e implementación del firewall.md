@@ -43,4 +43,6 @@ Se deben desmarcar las 2 opciones para permitir el acceso de la máquina kali ha
 <p align="center">
   <em>Figura 5. Configuración de la interfaz LAN de pfSense: dirección IP 192.168.1.1 con máscara de subred /24.</em>
 </p>
+Por último, se debe configurar una nueva contraseña para el inicio de sesión en la interfaz web. Luego de esto, es probable que se tenga que deshabilitar de nuevo el cortafuegos de pfsense con el comando pfclt -d. Una vez finalizado el porceso, se verá una página como la que se muestra en la figura 6.
+
 
