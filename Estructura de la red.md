@@ -18,12 +18,15 @@ La figura 1 ilustra un diagrama que permite visualizar de mejor manera la topolo
   - vCPU: 1-2
   - RAM: 2 GB
   - Almacenamiento: 20 GB VDI
+  - Tipo de conexión: Modo puente y red interna (2 interfaces de red)
 - **Ubuntu-Desktop:** 
   - vCPU: 2
   - RAM: 4 GB
   - Almacenamiento: 40 GB VDI
+  - Tipo de conexión: Modo red interna
 - **Kali-Linux:** 
   - vCPU: 2
   - RAM: 4 GB
   - Almacenamiento: 40 GB VDI
+  - Tipo de conexión: Modo puente.
 
