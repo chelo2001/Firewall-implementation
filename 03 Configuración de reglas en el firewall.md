@@ -1,1 +1,3 @@
-##
+## Configuración de servidor DHCP para la máquina ubuntu
+Antes de configurar más reglas en el firewall, es necesario configurar un servidor DHCP que permita que la máquina Ubuntu adquiera una dirección IP dentro de la red interna. Para eso de debe ir a las opciones Services → DHCP server en pfsense, marcar la opción de habilitar servidor DHCP en la interfaz LAN, dejar las configuraciones de IP como están y configurar la IP del servidor DNS como la IP del router doméstico (192.168.100.1 en este caso), lo cual permite resolución DNS. Una vez hecho esto, se debe ingresar a la máquina Ubuntu para confirmar si se le asignó dirección ip con el comando ip a por ejemplo como se ilustra en la figura 1.
+
