@@ -45,5 +45,8 @@ Después de guardar la configuración y aplicar los cambios es posible hacer con
   <em>Figura 4. Conexión exitosa mediante ping desde Kali hacia la interfaz WAN de pfSense (192.168.100.152): 4 paquetes enviados, 4 recibidos y 0% de pérdida, tras agregar la regla que permite el tráfico ICMP.</em>
 </p>
 
+## Permitir el acceso de la máquina kali hacia la red interna LAN
+Para permitir que la máquina kali tenga conexión con la máquina ubuntu, se debe crear una nueva regla de paso en el firewall que permita el paso de tráfico desde la IP de kali hacia la máquina ubuntu. La configuración quedaría de la siguiente manera.
+
 
 
