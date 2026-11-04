@@ -37,4 +37,10 @@ Se debe dar a siguiente hasta encontrar las opciones que se muestran en la figur
 </p>
 
 Se deben desmarcar las 2 opciones para permitir el acceso de la máquina kali hacia el gestor web del firewall. Una vez hecho eso, se puede ingresar sin problemas a la interfaz web del firewall. La red LAN a la que se conectará la máquina ubuntu se dejó con la configuración expuesta en la figura 5,
+<p align="center">
+  <img src="docs/pfsense-configurar-lan.png" alt="Pantalla Configure LAN Interface de pfSense con la IP 192.168.1.1 y máscara 24" width="700">
+</p>
+<p align="center">
+  <em>Figura 5. Configuración de la interfaz LAN de pfSense: dirección IP 192.168.1.1 con máscara de subred /24.</em>
+</p>
 
