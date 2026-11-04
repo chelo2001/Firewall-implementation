@@ -50,5 +50,5 @@ Por último, se debe configurar una nueva contraseña para el inicio de sesión 
 <p align="center">
   <em>Figura 6. Dashboard de pfSense (Status / Dashboard) con la información del sistema: versión 2.7.2-RELEASE (amd64) ejecutándose en una máquina virtual de VirtualBox.</em>
 </p>
-Una vez hecho esto, se debe añadir una regla en el firewall en la opción **Firewall → Rules → WAN**
+Una vez hecho esto, se debe añadir una regla en el firewall en la opción Firewall → Rules → WAN que permita el paso de tráfico de red desde cualquier rango de dirección IP de la red doméstica (pues se tiene adaptador modo puente) que sería 192.168.100.0/24 en este caso hacia la dirección IP del firewall (192.168.100.152 en este caso). Al hacer esto, se debe presionar en aplicar los cambios y ya se podría tener acceso a la interfaz web sin problema.
 
