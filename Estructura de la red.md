@@ -22,7 +22,7 @@ La figura 1 ilustra un diagrama que permite visualizar de mejor manera la topolo
   - vCPU: 2
   - RAM: 4 GB
   - Almacenamiento: 40 GB VDI
-- **Ubuntu-Desktop:** 
+- **Kali-Linux:** 
   - vCPU: 2
   - RAM: 4 GB
   - Almacenamiento: 40 GB VDI
