@@ -23,9 +23,17 @@ Como se observa en la figura, se aprecian 2 interfaces de red (que son las que s
 <p align="center">
   <img src="pfsense-asistente-inicio.png" alt="Pantalla de bienvenida del asistente de configuración inicial de pfSense" width="700">
 </p>
-Se debe dar a siguiente hasta encontrar las opciones que se muestran en la figura 4,
 
 <p align="center">
   <em>Figura 3. Pantalla de bienvenida del asistente de configuración inicial de pfSense (Wizard / pfSense Setup).</em>
 </p>
 
+Se debe dar a siguiente hasta encontrar las opciones que se muestran en la figura 4,
+<p align="center">
+  <img src="pfsense-bloqueo-rfc1918.png" alt="Opciones del asistente de pfSense: Block RFC1918 Private Networks y Block bogon networks" width="700">
+</p>
+<p align="center">
+  <em>Figura 4; Opciones de bloqueo en la interfaz WAN.</em>
+</p>
+
+Se deben desmarcar las 2 opciones para permitir el acceso de la máquina kali hacia el gestor web del firewall. Una vez hecho eso, se puede ingresar sin problemas a la interfaz web del firewall.
