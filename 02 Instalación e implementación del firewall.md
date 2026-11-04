@@ -50,7 +50,5 @@ Por último, se debe configurar una nueva contraseña para el inicio de sesión 
 <p align="center">
   <em>Figura 6. Dashboard de pfSense (Status / Dashboard) con la información del sistema: versión 2.7.2-RELEASE (amd64) ejecutándose en una máquina virtual de VirtualBox.</em>
 </p>
-Una vez hecho esto, se debe añadir una regla en el firewall en la opción
-
-**Firewall → Rules → WAN**
+Una vez hecho esto, se debe añadir una regla en el firewall en la opción **Firewall → Rules → WAN**
 
