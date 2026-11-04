@@ -20,4 +20,9 @@ Una vez descargado el instalador, se debe descomprimir el archivo para obtener l
 
 ## Configuración de interfaces de red e ingreso al gestor del firewall
 Como se observa en la figura, se aprecian 2 interfaces de red (que son las que se configuraron anteriormente antes de arrancar la máquina con la iso). En este caso, cada una tiene asignada una dirección ip mediante protocolo DHCP. En el caso de que no se tenga dirección ip en alguna interfaz, se puede solicitar mediante protocolo DHCP con la opción 2. Una vez ambas interfaces tengan dirección IP asignada, se debe deshabilitar el firewall de pfsense para poder acceder al gestor web de este mismo con el comando pfsense -d. Una vez hecho eso, se puede ingresar al gestor con las credenciales por defecto admin-pfsense. una vez dentro, se verá algo así,
-
+<p align="center">
+  <img src="docs/pfsense-reglas-wan.png" alt="Reglas del firewall pfSense en la interfaz WAN: una regla ICMP desde 192.168.100.115 y una regla TCP desde 192.168.100.0/24 hacia 192.168.100.152" width="800">
+</p>
+<p align="center">
+  <em>Figura 4. Reglas aplicadas en la interfaz WAN de pfSense: se permite ICMP desde la máquina Kali (192.168.100.115) y TCP desde la red 192.168.100.0/24 hacia la IP de la WAN (192.168.100.152).</em>
+</p>
