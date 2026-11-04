@@ -38,5 +38,12 @@ Debido a que no hay reglas en el firewall que permitan el tráfico ICMP hacia es
 
 Después de guardar la configuración y aplicar los cambios es posible hacer conexión con el firewall mediante el comando ping.
 
+<p align="center">
+  <img src="docs/kali-ping-pfsense-exitoso.png" alt="Salida del comando ping 192.168.100.152 desde Kali con 4 paquetes enviados, 4 recibidos y 0% de pérdida" width="700">
+</p>
+<p align="center">
+  <em>Figura 4. Conexión exitosa mediante ping desde Kali hacia la interfaz WAN de pfSense (192.168.100.152): 4 paquetes enviados, 4 recibidos y 0% de pérdida, tras agregar la regla que permite el tráfico ICMP.</em>
+</p>
+
 
 
