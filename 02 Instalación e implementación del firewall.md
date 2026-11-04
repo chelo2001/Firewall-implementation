@@ -26,3 +26,4 @@ Como se observa en la figura, se aprecian 2 interfaces de red (que son las que s
 <p align="center">
   <em>Figura 3: Interfaz de configuración de firewall pfsense.</em>
 </p>
+
