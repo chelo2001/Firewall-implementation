@@ -10,3 +10,4 @@ Se debe seleccionar la opción que se muestra a continuación.
 <p align="center">
   <em>Figura 1. Descarga de pfSense: selecciona la opción AMD64 ISO IPMI/Virtual Machines para instalarlo en una máquina virtual.</em>
 </p>
+Una vez descargado el instalador, se debe descomprimir el archivo para obtener la ISO, importar la ISO, configurar las 2 interfaces de red en virtualbox (una en modo puente y la otra con conexión hacia una red interna que conectará con la máquina ubuntu), ejecutar la máquina e instalar el firewall pfsense. Una vez hecho todo lo anterior, se debe remover del disco óptico de virtualbox la ISO y reiniciar la máquina. Al hacer eso, aparecerá la terminal que se muestra en la figura 2.
