@@ -24,5 +24,5 @@ Como se observa en la figura, se aprecian 2 interfaces de red (que son las que s
   <img src="pfsense-reglas-wan.png" alt="Reglas del firewall pfSense en la interfaz WAN: una regla ICMP desde 192.168.100.115 y una regla TCP desde 192.168.100.0/24 hacia 192.168.100.152" width="800">
 </p>
 <p align="center">
-  <em>Figura 4. Reglas aplicadas en la interfaz WAN de pfSense: se permite ICMP desde la máquina Kali (192.168.100.115) y TCP desde la red 192.168.100.0/24 hacia la IP de la WAN (192.168.100.152).</em>
+  <em>Figura 3: Interfaz de configuración de firewall pfsense.</em>
 </p>
