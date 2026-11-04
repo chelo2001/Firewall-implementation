@@ -44,5 +44,13 @@ Se deben desmarcar las 2 opciones para permitir el acceso de la máquina kali ha
   <em>Figura 5. Configuración de la interfaz LAN de pfSense: dirección IP 192.168.1.1 con máscara de subred /24.</em>
 </p>
 Por último, se debe configurar una nueva contraseña para el inicio de sesión en la interfaz web. Luego de esto, es probable que se tenga que deshabilitar de nuevo el cortafuegos de pfsense con el comando pfclt -d. Una vez finalizado el porceso, se verá una página como la que se muestra en la figura 6.
+<p align="center">
+  <img src="pfsense-dashboard.png" alt="Dashboard de pfSense 2.7.2 mostrando el panel System Information y el panel Netgate Services And Support" width="800">
+</p>
+<p align="center">
+  <em>Figura 6. Dashboard de pfSense (Status / Dashboard) con la información del sistema: versión 2.7.2-RELEASE (amd64) ejecutándose en una máquina virtual de VirtualBox.</em>
+</p>
+Una vez hecho esto, se debe añadir una regla en el firewall en la opción
 
+**Firewall → Rules → WAN**
 
