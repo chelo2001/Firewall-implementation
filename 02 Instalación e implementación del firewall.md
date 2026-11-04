@@ -36,4 +36,5 @@ Se debe dar a siguiente hasta encontrar las opciones que se muestran en la figur
   <em>Figura 4; Opciones de bloqueo en la interfaz WAN.</em>
 </p>
 
-Se deben desmarcar las 2 opciones para permitir el acceso de la máquina kali hacia el gestor web del firewall. Una vez hecho eso, se puede ingresar sin problemas a la interfaz web del firewall.
+Se deben desmarcar las 2 opciones para permitir el acceso de la máquina kali hacia el gestor web del firewall. Una vez hecho eso, se puede ingresar sin problemas a la interfaz web del firewall. La red LAN a la que se conectará la máquina ubuntu se dejó con la configuración expuesta en la figura 5,
+
