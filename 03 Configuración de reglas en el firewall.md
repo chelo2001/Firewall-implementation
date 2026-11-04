@@ -47,6 +47,11 @@ Después de guardar la configuración y aplicar los cambios es posible hacer con
 
 ## Permitir el acceso de la máquina kali hacia la red interna LAN
 Para permitir que la máquina kali tenga conexión con la máquina ubuntu, se debe crear una nueva regla de paso en el firewall que permita el paso de tráfico desde la IP de kali hacia la máquina ubuntu. La configuración quedaría de la siguiente manera.
-
+<p align="center">
+  <img src="pfsense-regla-kali-ubuntu.png" alt="Pantalla Edit Firewall Rule de pfSense con una regla Pass en la WAN para cualquier protocolo desde 192.168.100.115 hacia 192.168.1.100" width="800">
+</p>
+<p align="center">
+  <em>Figura 5. Regla de firewall en la interfaz WAN de pfSense: se permite todo el tráfico (Pass, protocolo Any) desde Kali (192.168.100.115) hacia Ubuntu (192.168.1.100) para habilitar la comunicación entre ambas máquinas.</em>
+</p>
 
 
