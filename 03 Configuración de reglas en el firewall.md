@@ -29,3 +29,9 @@ Al intentar hacer conexión al firewall pfsense a través de la máquina kali se
 
 Debido a que no hay reglas en el firewall que permitan el tráfico ICMP hacia este mismo, todos los paquetes enviados con el comando ping son descartados (ya que utilizan el protocolo ICMP). Se creará una regla de paso en el firewall que permita el paso de dicho tráfico. Para ello hay que dirigirse a Firewall → Rules → WAN y pulsar en añadir nueva regla. Una vez en la configuración de regla, se debe agragar en la interfaz WAN la dirección IP de la máquina kali en Source (192.160.100.115), la dirección IP del firewall de la interfaz WAN en destination (192.168.100.152 en este caso) y establecer el protocolo en ICMP. La configuración debería haber quedado de la siguiente manera,
 
+<p align="center">
+  <img src="pfsense-regla-icmp-wan.png" alt="Pantalla Edit Firewall Rule de pfSense con una regla Pass en la WAN para el protocolo ICMP desde 192.168.100.115 hacia 192.168.100.152" width="800">
+</p>
+<p align="center">
+  <em>Figura 3. Regla de firewall en la interfaz WAN de pfSense: se permite el tráfico ICMP (Pass) desde Kali (192.168.100.115) hacia la IP de la WAN (192.168.100.152) para habilitar el ping.</em>
+</p>
