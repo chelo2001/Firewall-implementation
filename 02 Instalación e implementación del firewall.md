@@ -21,9 +21,9 @@ Una vez descargado el instalador, se debe descomprimir el archivo para obtener l
 ## Configuración de interfaces de red e ingreso al gestor del firewall
 Como se observa en la figura, se aprecian 2 interfaces de red (que son las que se configuraron anteriormente antes de arrancar la máquina con la iso). En este caso, cada una tiene asignada una dirección ip mediante protocolo DHCP. En el caso de que no se tenga dirección ip en alguna interfaz, se puede solicitar mediante protocolo DHCP con la opción 2. Una vez ambas interfaces tengan dirección IP asignada, se debe deshabilitar el firewall de pfsense para poder acceder al gestor web de este mismo con el comando pfsense -d. Una vez hecho eso, se puede ingresar al gestor con las credenciales por defecto admin-pfsense. una vez dentro, se verá algo así,
 <p align="center">
-  <img src="pfsense-reglas-wan.png" alt="Reglas del firewall pfSense en la interfaz WAN: una regla ICMP desde 192.168.100.115 y una regla TCP desde 192.168.100.0/24 hacia 192.168.100.152" width="800">
+  <img src="pfsense-asistente-inicio.png" alt="Pantalla de bienvenida del asistente de configuración inicial de pfSense" width="700">
 </p>
 <p align="center">
-  <em>Figura 3: Interfaz de configuración de firewall pfsense.</em>
+  <em>Figura 3. Pantalla de bienvenida del asistente de configuración inicial de pfSense (Wizard / pfSense Setup).</em>
 </p>
 
