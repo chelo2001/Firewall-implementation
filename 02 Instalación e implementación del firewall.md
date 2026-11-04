@@ -23,6 +23,8 @@ Como se observa en la figura, se aprecian 2 interfaces de red (que son las que s
 <p align="center">
   <img src="pfsense-asistente-inicio.png" alt="Pantalla de bienvenida del asistente de configuración inicial de pfSense" width="700">
 </p>
+Se debe dar a siguiente hasta encontrar las opciones que se muestran en la figura 4,
+
 <p align="center">
   <em>Figura 3. Pantalla de bienvenida del asistente de configuración inicial de pfSense (Wizard / pfSense Setup).</em>
 </p>
