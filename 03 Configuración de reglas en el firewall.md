@@ -66,3 +66,5 @@ Ahora se debe verificar mediante ping si hay conexión, donde se puede apreciar 
   <em>Figura 6. Conexión mediante ping desde Kali hacia Ubuntu (192.168.1.100) a través de pfSense: 2 de 3 paquetes recibidos con TTL 63, lo que confirma que el tráfico cruza el firewall tras agregar la ruta y la regla de la WAN.</em>
 </p>
 
+## Creación de reglas para rechazo de paquetes en el firewall
+Ahora se añadirá una regla que rechace todo el tráfico proveniente de la máquina kali hacia la máquina. Para esto, se debe configurar la nueva regla de la manera que se muestra en la figura 7.
