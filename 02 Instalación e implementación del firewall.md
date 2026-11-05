@@ -1,5 +1,5 @@
 ## 1. Descarga del instalador
-Para la implementación de la herramienta de firewall pfsense se debe ingresar a la siguiente url;
+Para la implementación de la herramienta de firewall pfsense se debe ingresar a la siguiente url para la descarga del instalador.
 
 [Download pfSense Community Edition](https://www.pfsense.org/download/)
 
