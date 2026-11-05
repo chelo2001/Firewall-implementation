@@ -55,7 +55,5 @@ Proyecto de implementación de firewall y reglas para bloqueo y paso de tráfico
 ## 🧪 Pruebas de Verificación (Testing)
 
 ### 1. Verificación de Reglas de Rechazo/Bloqueo desde Kali Linux
-* **Prueba:** Escaneo de puertos y prueba de conectividad `ping` desde Kali Linux hacia la IP de la máquina Ubuntu.
-* **Resultado Esperado:** Paquetes rechazados / sin respuesta (`Destination Host Unreachable` o filtrados).
-```bash
-nmap -Pn -p 22,80,443 192.168.1.Z
+* **Prueba:** prueba de conectividad `ping` desde Kali Linux hacia la IP de la máquina Ubuntu e intento de ataque DoS mediante envío de tráfico TCP.
+
