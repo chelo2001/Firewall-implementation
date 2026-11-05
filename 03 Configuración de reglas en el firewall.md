@@ -67,14 +67,14 @@ Ahora se debe verificar mediante ping si hay conexión, donde se puede apreciar 
 </p>
 
 ## 4. Creación de reglas para rechazo de paquetes en el firewall
-Ahora se añadirá una regla que rechace todo el tráfico TCP proveniente de la máquina kali hacia la máquina Ubuntu. Para esto, se debe configurar la nueva regla de la manera que se muestra en la figura 7.
+Ahora se añadirá una regla que rechace todo el tráfico TCP proveniente de la máquina kali hacia la máquina Ubuntu. Para esto, se debe configurar la nueva regla de la manera que se muestra en la figura 8.
 <p align="center">
   <img src="images/pfsense-regla-reject-tcp.png" alt="Pantalla Edit Firewall Rule de pfSense con una regla Reject en la WAN para el protocolo TCP desde 192.168.100.115 hacia 192.168.1.100" width="800">
 </p>
 <p align="center">
   <em>Figura 8. Regla de firewall en la interfaz WAN de pfSense: se rechaza (Reject) el tráfico TCP desde Kali (192.168.100.115) hacia Ubuntu (192.168.1.100).</em>
 </p>
-Ahora el tráfico TCP proveniente de la máquina kali será rechazado por el firewall. Si ejecutamos el comando sudo hping3 --flood -S -p 80 192.168.1.100 en la máquina kali (el cual permite enviar tráfico TCP SYN) e iniciamos wireshark en la máquina ubuntu, no se apreciará ningún paquete, tal como se muestra en la figura 8.
+Ahora el tráfico TCP proveniente de la máquina kali será rechazado por el firewall. Si ejecutamos el comando sudo hping3 --flood -S -p 80 192.168.1.100 en la máquina kali (el cual permite enviar tráfico TCP SYN) e iniciamos wireshark en la máquina ubuntu, no se apreciará ningún paquete, tal como se muestra en la figura 9.
 <p align="center">
   <img src="images/kali-ubuntu-interfaces.png" alt="Terminal de Kali con los comandos hping3 y ping hacia 192.168.1.100, junto a Wireshark en Ubuntu capturando el tráfico en la interfaz enp0s3" width="900">
 </p>
@@ -82,7 +82,7 @@ Ahora el tráfico TCP proveniente de la máquina kali será rechazado por el fir
   <em>Figura 9. Prueba de conectividad y captura de tráfico: terminal de Kali ejecutando ping y un flood con hping3 hacia Ubuntu (192.168.1.100), junto a Wireshark en Ubuntu capturando en la interfaz enp0s3 con el filtro ip.src == 192.168.100.115.</em>
 </p>
 
-Sin embargo, debido a que la regla de paso implementada anteriormente en el firewalll sigue activa, todavía se seguirá recibiendo tráfico ICMP (pues es dintinto a TCP) como se observa en la figura 9.
+Sin embargo, debido a que la regla de paso implementada anteriormente en el firewalll sigue activa, todavía se seguirá recibiendo tráfico ICMP (pues es dintinto a TCP) como se observa en la figura 10.
 <p align="center">
   <img src="images/kali-ubuntu-captura-icmp.png" alt="Terminal de Kali ejecutando ping hacia 192.168.1.100, junto a Wireshark en Ubuntu mostrando los paquetes ICMP Echo request capturados con el filtro ip.src == 192.168.100.115" width="900">
 </p>
