@@ -59,3 +59,10 @@ Ahora se debe agregar una ruta estática en la máquina kali para poder tener al
 sudo ip route add 192.168.1.0/24 via <PFSENSE_WAN_IP>
 ```
 Ahora se debe verificar mediante ping si hay conexión, donde se puede apreciar en la figura de abajo que si la hay.
+<p align="center">
+  <img src="kali-ping-ubuntu.png" alt="Salida del comando ping 192.168.1.100 desde Kali con 3 paquetes enviados, 2 recibidos y 33% de pérdida" width="700">
+</p>
+<p align="center">
+  <em>Figura 6. Conexión mediante ping desde Kali hacia Ubuntu (192.168.1.100) a través de pfSense: 2 de 3 paquetes recibidos con TTL 63, lo que confirma que el tráfico cruza el firewall tras agregar la ruta y la regla de la WAN.</em>
+</p>
+
