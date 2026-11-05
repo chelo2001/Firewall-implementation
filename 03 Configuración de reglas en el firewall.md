@@ -67,7 +67,7 @@ Ahora se debe verificar mediante ping si hay conexión, donde se puede apreciar 
 </p>
 
 ## 4. Creación de reglas para rechazo de paquetes en el firewall
-Ahora se añadirá una regla que rechace todo el tráfico proveniente de la máquina kali hacia la máquina. Para esto, se debe configurar la nueva regla de la manera que se muestra en la figura 7.
+Ahora se añadirá una regla que rechace todo el tráfico TCP proveniente de la máquina kali hacia la máquina Ubuntu. Para esto, se debe configurar la nueva regla de la manera que se muestra en la figura 7.
 <p align="center">
   <img src="pfsense-regla-reject-tcp.png" alt="Pantalla Edit Firewall Rule de pfSense con una regla Reject en la WAN para el protocolo TCP desde 192.168.100.115 hacia 192.168.1.100" width="800">
 </p>
