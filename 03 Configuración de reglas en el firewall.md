@@ -83,3 +83,9 @@ Ahora el tráfico TCP proveniente de la máquina kali será rechazado por el fir
 </p>
 
 Sin embargo, debido a que la regla de paso implementada anteriormente en el firewalll sigue activa, todavía se seguirá recibiendo tráfico ICMP como se observa en la figura 9.
+<p align="center">
+  <img src="kali-ubuntu-captura-icmp.png" alt="Terminal de Kali ejecutando ping hacia 192.168.1.100, junto a Wireshark en Ubuntu mostrando los paquetes ICMP Echo request capturados con el filtro ip.src == 192.168.100.115" width="900">
+</p>
+<p align="center">
+  <em>Figura 9. Captura de tráfico con Wireshark: los paquetes ICMP Echo request del ping ejecutado en Kali (192.168.100.115) llegan a Ubuntu (192.168.1.100), confirmando que el tráfico atraviesa el firewall pfSense.</em>
+</p>
