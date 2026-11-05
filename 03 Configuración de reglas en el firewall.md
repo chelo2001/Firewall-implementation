@@ -7,7 +7,7 @@ Antes de configurar más reglas en el firewall, es necesario configurar un servi
   <em>Figura 1. Configuración de red de Ubuntu: la interfaz enp0s3 obtiene la IP 192.168.1.100/24 por DHCP desde pfSense.</em>
 </p>
 
-Como se ve en la figura, la máquina Ubuntu tiene asignada una dirección IP mediante el servidor DHCP que se configuró anteriormente, se puede probar si presenta salida a internet haciendo ping a google.com (además así se verifica también la resolución DNS).
+Como se ve en la figura, la máquina Ubuntu tiene asignada una dirección IP mediante el servidor DHCP que se configuró anteriormente, se puede probar si presenta salida a internet haciendo ping a google.com (además, así se verifica también la resolución DNS).
 
 <p align="center">
   <img src="ubuntu-ping-google.png" alt="Salida del comando ping google.com en Ubuntu con 5 paquetes enviados, 5 recibidos y 0% de pérdida" width="500">
