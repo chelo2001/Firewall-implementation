@@ -75,3 +75,9 @@ Ahora se añadirá una regla que rechace todo el tráfico proveniente de la máq
   <em>Figura 7. Regla de firewall en la interfaz WAN de pfSense: se rechaza (Reject) el tráfico TCP desde Kali (192.168.100.115) hacia Ubuntu (192.168.1.100).</em>
 </p>
 Ahora el tráfico TCP proveniente de la máquina kali será rechazado por el firewall. Si ejecutamos el comando sudo hping3 --flood -S -p 80 192.168.1.100 en la máquina kali (el cual permite enviar tráfico TCP SYN) e iniciamos wireshark en la máquina ubuntu, no se apreciará ningún paquete, tal como se muestra en la figura 8.
+<p align="center">
+  <img src="kali-ubuntu-interfaces.png" alt="Terminal de Kali con los comandos hping3 y ping hacia 192.168.1.100, junto a Wireshark en Ubuntu capturando el tráfico en la interfaz enp0s3" width="900">
+</p>
+<p align="center">
+  <em>Figura 8. Prueba de conectividad y captura de tráfico: terminal de Kali ejecutando ping y un flood con hping3 hacia Ubuntu (192.168.1.100), junto a Wireshark en Ubuntu capturando en la interfaz enp0s3 con el filtro ip.src == 192.168.100.115.</em>
+</p>
