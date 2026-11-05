@@ -47,8 +47,6 @@ Proyecto de implementación de firewall y reglas para bloqueo y paso de tráfico
    * *Justificación:* Por defecto pfSense descarta el tráfico entrante en la WAN que provenga de redes privadas (RFC1918). Como la WAN del laboratorio está en `192.168.100.0/24`, una red privada, esta opción debe quedar desmarcada o todo el tráfico de Kali se bloquearía antes de llegar a evaluar las reglas.
 
 ---
----
-
 ## 🧪 Pruebas de Verificación (Testing)
 
 ### 1. Verificación de Reglas de Rechazo/Bloqueo desde Kali Linux
