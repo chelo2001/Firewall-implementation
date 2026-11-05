@@ -24,7 +24,7 @@ Al intentar hacer conexión al firewall pfsense a través de la máquina kali se
   <img src="images/kali-ping-pfsense.png" alt="Salida del comando ping 192.168.100.152 desde Kali con 10 paquetes enviados, 0 recibidos y 100% de pérdida" width="500">
 </p>
 <p align="center">
-  <em>Figura 2. Intento de conexión mediante ping desde Kali hacia la interfaz WAN de pfSense (192.168.100.152): 10 paquetes enviados, 0 recibidos y 100% de pérdida, ya que el firewall bloquea el tráfico ICMP entrante por defecto.</em>
+  <em>Figura 3. Intento de conexión mediante ping desde Kali hacia la interfaz WAN de pfSense (192.168.100.152): 10 paquetes enviados, 0 recibidos y 100% de pérdida, ya que el firewall bloquea el tráfico ICMP entrante por defecto.</em>
 </p>
 
 Debido a que no hay reglas en el firewall que permitan el tráfico ICMP hacia este mismo, todos los paquetes enviados con el comando ping son descartados (ya que utilizan el protocolo ICMP). Se creará una regla de paso en el firewall que permita el paso de dicho tráfico. Para ello hay que dirigirse a Firewall → Rules → WAN y pulsar en añadir nueva regla. Una vez en la configuración de regla, se debe agragar en la interfaz WAN la dirección IP de la máquina kali en Source (192.160.100.115), la dirección IP del firewall de la interfaz WAN en destination (192.168.100.152 en este caso) y establecer el protocolo en ICMP. La configuración debería haber quedado de la siguiente manera,
@@ -33,7 +33,7 @@ Debido a que no hay reglas en el firewall que permitan el tráfico ICMP hacia es
   <img src="images/pfsense-regla-icmp-wan.png" alt="Pantalla Edit Firewall Rule de pfSense con una regla Pass en la WAN para el protocolo ICMP desde 192.168.100.115 hacia 192.168.100.152" width="800">
 </p>
 <p align="center">
-  <em>Figura 3. Regla de firewall en la interfaz WAN de pfSense: se permite el tráfico ICMP (Pass) desde Kali (192.168.100.115) hacia la IP de la WAN (192.168.100.152) para habilitar el ping.</em>
+  <em>Figura 4. Regla de firewall en la interfaz WAN de pfSense: se permite el tráfico ICMP (Pass) desde Kali (192.168.100.115) hacia la IP de la WAN (192.168.100.152) para habilitar el ping.</em>
 </p>
 
 Después de guardar la configuración y aplicar los cambios es posible hacer conexión con el firewall mediante el comando ping.
@@ -42,7 +42,7 @@ Después de guardar la configuración y aplicar los cambios es posible hacer con
   <img src="images/kali-ping-pfsense-exitoso.png" alt="Salida del comando ping 192.168.100.152 desde Kali con 4 paquetes enviados, 4 recibidos y 0% de pérdida" width="700">
 </p>
 <p align="center">
-  <em>Figura 4. Conexión exitosa mediante ping desde Kali hacia la interfaz WAN de pfSense (192.168.100.152): 4 paquetes enviados, 4 recibidos y 0% de pérdida, tras agregar la regla que permite el tráfico ICMP.</em>
+  <em>Figura 5. Conexión exitosa mediante ping desde Kali hacia la interfaz WAN de pfSense (192.168.100.152): 4 paquetes enviados, 4 recibidos y 0% de pérdida, tras agregar la regla que permite el tráfico ICMP.</em>
 </p>
 
 ## 3. Permitir el acceso de la máquina kali hacia la red interna LAN
@@ -51,7 +51,7 @@ Para permitir que la máquina kali tenga conexión con la máquina ubuntu, se de
   <img src="images/pfsense-regla-kali-ubuntu.png" alt="Pantalla Edit Firewall Rule de pfSense con una regla Pass en la WAN para cualquier protocolo desde 192.168.100.115 hacia 192.168.1.100" width="800">
 </p>
 <p align="center">
-  <em>Figura 5. Regla de firewall en la interfaz WAN de pfSense: se permite todo el tráfico (Pass, protocolo Any) desde Kali (192.168.100.115) hacia Ubuntu (192.168.1.100) para habilitar la comunicación entre ambas máquinas.</em>
+  <em>Figura 6. Regla de firewall en la interfaz WAN de pfSense: se permite todo el tráfico (Pass, protocolo Any) desde Kali (192.168.100.115) hacia Ubuntu (192.168.1.100) para habilitar la comunicación entre ambas máquinas.</em>
 </p>
 Ahora se debe agregar una ruta estática en la máquina kali para poder tener alcance hacia la red interna en la que se encuentra la máquina ubuntu. Esto se hace con el siguiente comando;
 
@@ -63,7 +63,7 @@ Ahora se debe verificar mediante ping si hay conexión, donde se puede apreciar 
   <img src="images/kali-ping-ubuntu.png" alt="Salida del comando ping 192.168.1.100 desde Kali con 3 paquetes enviados, 2 recibidos y 33% de pérdida" width="700">
 </p>
 <p align="center">
-  <em>Figura 6. Conexión mediante ping desde Kali hacia Ubuntu (192.168.1.100) a través de pfSense: 2 de 3 paquetes recibidos con TTL 63, lo que confirma que el tráfico cruza el firewall tras agregar la ruta y la regla de la WAN.</em>
+  <em>Figura 7. Conexión mediante ping desde Kali hacia Ubuntu (192.168.1.100) a través de pfSense: 2 de 3 paquetes recibidos con TTL 63, lo que confirma que el tráfico cruza el firewall tras agregar la ruta y la regla de la WAN.</em>
 </p>
 
 ## 4. Creación de reglas para rechazo de paquetes en el firewall
@@ -72,14 +72,14 @@ Ahora se añadirá una regla que rechace todo el tráfico TCP proveniente de la 
   <img src="images/pfsense-regla-reject-tcp.png" alt="Pantalla Edit Firewall Rule de pfSense con una regla Reject en la WAN para el protocolo TCP desde 192.168.100.115 hacia 192.168.1.100" width="800">
 </p>
 <p align="center">
-  <em>Figura 7. Regla de firewall en la interfaz WAN de pfSense: se rechaza (Reject) el tráfico TCP desde Kali (192.168.100.115) hacia Ubuntu (192.168.1.100).</em>
+  <em>Figura 8. Regla de firewall en la interfaz WAN de pfSense: se rechaza (Reject) el tráfico TCP desde Kali (192.168.100.115) hacia Ubuntu (192.168.1.100).</em>
 </p>
 Ahora el tráfico TCP proveniente de la máquina kali será rechazado por el firewall. Si ejecutamos el comando sudo hping3 --flood -S -p 80 192.168.1.100 en la máquina kali (el cual permite enviar tráfico TCP SYN) e iniciamos wireshark en la máquina ubuntu, no se apreciará ningún paquete, tal como se muestra en la figura 8.
 <p align="center">
   <img src="images/kali-ubuntu-interfaces.png" alt="Terminal de Kali con los comandos hping3 y ping hacia 192.168.1.100, junto a Wireshark en Ubuntu capturando el tráfico en la interfaz enp0s3" width="900">
 </p>
 <p align="center">
-  <em>Figura 8. Prueba de conectividad y captura de tráfico: terminal de Kali ejecutando ping y un flood con hping3 hacia Ubuntu (192.168.1.100), junto a Wireshark en Ubuntu capturando en la interfaz enp0s3 con el filtro ip.src == 192.168.100.115.</em>
+  <em>Figura 9. Prueba de conectividad y captura de tráfico: terminal de Kali ejecutando ping y un flood con hping3 hacia Ubuntu (192.168.1.100), junto a Wireshark en Ubuntu capturando en la interfaz enp0s3 con el filtro ip.src == 192.168.100.115.</em>
 </p>
 
 Sin embargo, debido a que la regla de paso implementada anteriormente en el firewalll sigue activa, todavía se seguirá recibiendo tráfico ICMP (pues es dintinto a TCP) como se observa en la figura 9.
@@ -87,5 +87,5 @@ Sin embargo, debido a que la regla de paso implementada anteriormente en el fire
   <img src="images/kali-ubuntu-captura-icmp.png" alt="Terminal de Kali ejecutando ping hacia 192.168.1.100, junto a Wireshark en Ubuntu mostrando los paquetes ICMP Echo request capturados con el filtro ip.src == 192.168.100.115" width="900">
 </p>
 <p align="center">
-  <em>Figura 9. Captura de tráfico con Wireshark: los paquetes ICMP Echo request del ping ejecutado en Kali (192.168.100.115) llegan a Ubuntu (192.168.1.100), confirmando que el tráfico atraviesa el firewall pfSense.</em>
+  <em>Figura 10. Captura de tráfico con Wireshark: los paquetes ICMP Echo request del ping ejecutado en Kali (192.168.100.115) llegan a Ubuntu (192.168.1.100), confirmando que el tráfico atraviesa el firewall pfSense.</em>
 </p>
