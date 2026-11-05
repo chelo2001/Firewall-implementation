@@ -1,5 +1,5 @@
 
- ## 1. Topología y Segmentación de Red
+ ## 1.🌐 Topología y Segmentación de Red
 El laboratorio implementa un perímetro de red virtualizado utilizando pfSense como pasarela de seguridad entre la red externa y el segmento interno protegido.
 
 - **Red WAN:** Conectada al host/Internet mediante DHCP (`em0`).
@@ -13,7 +13,7 @@ La figura 1 ilustra un diagrama que permite visualizar de mejor manera la topolo
   <em>Figura 1. Topología del laboratorio: Kali Linux y la interfaz WAN de pfSense comparten la red en modo puente (192.168.100.0/24); la interfaz LAN de pfSense da a la red interna (192.168.1.0/24), donde está Ubuntu.</em>
 </p>
 
-## 2. Especificaciones de Hardware Virtual
+## 2.💻 Especificaciones de Hardware Virtual
 - **pfSense Firewall:** 
   - vCPU: 1-2
   - RAM: 2 GB
