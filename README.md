@@ -17,17 +17,38 @@ Proyecto de implementación de firewall y reglas para bloqueo y paso de tráfico
 
 ## 🛡️ Políticas y Reglas de Firewall Configuradas
 
-### Reglas en Interfaz WAN / LAN
-1. **Bloqueo de Tráfico Inbound No Solicitado (Pass vs Reject/Block):**
-   * *Acción:* `REJECT` / `BLOCK`
-   * *Origen:* Red WAN (`192.168.100.0/24`)
-   * *Destino:* Red LAN (`192.168.1.0/24`)
-   * *Justificación:* Evitar accesos no autorizados hacia el segmento interno desde el exterior.
-2. **Permiso Controlado Outbound:**
+### Reglas implementadas en la interfaz WAN
+
+1. **Permitir ICMP hacia la WAN de pfSense:**
    * *Acción:* `PASS`
-   * *Protocolo:* ICMP / TCP (Puertos 80, 443)
-   * *Origen:* LAN Net
-   * *Destino:* Any
+   * *Protocolo:* ICMP
+   * *Origen:* `192.168.100.115` (Kali)
+   * *Destino:* `192.168.100.152` (IP WAN de pfSense)
+   * *Justificación:* Permitir el ping desde Kali hacia la propia interfaz WAN de pfSense, bloqueado por defecto en todo firewall.
+
+2. **Rechazar tráfico TCP desde Kali hacia Ubuntu:**
+   * *Acción:* `REJECT`
+   * *Protocolo:* TCP
+   * *Origen:* `192.168.100.115` (Kali)
+   * *Destino:* `192.168.1.100` (Ubuntu)
+   * *Justificación:* Bloquear explícitamente las conexiones TCP (SSH, HTTP, etc.) desde el atacante hacia Ubuntu, devolviendo un paquete RST en lugar de descartar en silencio. **Debe ubicarse por encima de la regla 3**, ya que pfSense aplica la primera coincidencia de arriba hacia abajo.
+
+3. **Permitir todo el tráfico desde Kali hacia Ubuntu:**
+   * *Acción:* `PASS`
+   * *Protocolo:* Any
+   * *Origen:* `192.168.100.115` (Kali)
+   * *Destino:* `192.168.1.100` (Ubuntu)
+   * *Justificación:* Habilitar la comunicación general entre Kali y Ubuntu a través del firewall, necesaria además de la ruta estática agregada en Kali (`sudo ip route add 192.168.1.0/24 via 192.168.100.152`).
+
+### Ajustes relacionados (no son reglas, pero afectan el filtrado)
+
+4. **Desactivar "Block private networks" en la interfaz WAN:**
+   * *Ubicación:* Interfaces → WAN
+   * *Justificación:* Por defecto pfSense descarta el tráfico entrante en la WAN que provenga de redes privadas (RFC1918). Como la WAN del laboratorio está en `192.168.100.0/24`, una red privada, esta opción debe quedar desmarcada o todo el tráfico de Kali se bloquearía antes de llegar a evaluar las reglas.
+
+---
+
+**Nota sobre el orden:** en pfSense las reglas se evalúan de arriba hacia abajo y se aplica la primera que coincide. Para que el `REJECT` de la regla 2 tenga efecto sobre el tráfico TCP, debe estar antes que la regla 3 (`PASS` / Any) en la lista de **Firewall → Rules → WAN**.
 
 ---
 
