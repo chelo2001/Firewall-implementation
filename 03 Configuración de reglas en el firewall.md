@@ -58,4 +58,4 @@ Ahora se debe agregar una ruta estática en la máquina kali para poder tener al
 ```bash
 sudo ip route add 192.168.1.0/24 via <PFSENSE_WAN_IP>
 ```
-
+Ahora se debe verificar mediante ping si hay conexión, donde se puede apreciar en la figura de abajo que si la hay.
