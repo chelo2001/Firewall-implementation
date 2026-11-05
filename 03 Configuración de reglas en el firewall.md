@@ -53,5 +53,8 @@ Para permitir que la máquina kali tenga conexión con la máquina ubuntu, se de
 <p align="center">
   <em>Figura 5. Regla de firewall en la interfaz WAN de pfSense: se permite todo el tráfico (Pass, protocolo Any) desde Kali (192.168.100.115) hacia Ubuntu (192.168.1.100) para habilitar la comunicación entre ambas máquinas.</em>
 </p>
-
+Ahora se debe agregar una ruta estática en la máquina kali para poder tener alcance hacia la red interna en la que se encuentra la máquina ubuntu. Esto se hace con el siguiente comando;
+```bash
+sudo ip route add 192.168.1.0/24 via <PFSENSE_WAN_IP>
+```
 
