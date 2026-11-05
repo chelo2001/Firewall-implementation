@@ -1,4 +1,4 @@
-## Configuración de servidor DHCP para la máquina ubuntu
+## 1. Configuración de servidor DHCP para la máquina ubuntu
 Antes de configurar más reglas en el firewall, es necesario configurar un servidor DHCP que permita que la máquina Ubuntu adquiera una dirección IP dentro de la red interna. Para eso de debe ir a las opciones Services → DHCP server en pfsense, marcar la opción de habilitar servidor DHCP en la interfaz LAN, dejar las configuraciones de IP como están y configurar la IP del servidor DNS como la IP del router doméstico (192.168.100.1 en este caso), lo cual permite resolución DNS. Una vez hecho esto, se debe ingresar a la máquina Ubuntu para confirmar si se le asignó dirección ip con el comando ip a por ejemplo como se ilustra en la figura 1.
 <p align="center">
   <img src="ubuntu-ip-a.png" alt="Salida del comando ip a en Ubuntu mostrando la interfaz enp0s3 con la IP 192.168.1.100/24 asignada por DHCP" width="500">
@@ -18,7 +18,7 @@ Como se ve en la figura, la máquina Ubuntu tiene asignada una dirección IP med
 
 Como se aprecia, hay salida a internet y resolución DNS. 
 
-## Configuración de regla de paso de tráfico ICMP a través del firewall
+## 2. Configuración de regla de paso de tráfico ICMP a través del firewall
 Al intentar hacer conexión al firewall pfsense a través de la máquina kali se aprecia que no llega ningún paquete.
 <p align="center">
   <img src="kali-ping-pfsense.png" alt="Salida del comando ping 192.168.100.152 desde Kali con 10 paquetes enviados, 0 recibidos y 100% de pérdida" width="500">
@@ -45,7 +45,7 @@ Después de guardar la configuración y aplicar los cambios es posible hacer con
   <em>Figura 4. Conexión exitosa mediante ping desde Kali hacia la interfaz WAN de pfSense (192.168.100.152): 4 paquetes enviados, 4 recibidos y 0% de pérdida, tras agregar la regla que permite el tráfico ICMP.</em>
 </p>
 
-## Permitir el acceso de la máquina kali hacia la red interna LAN
+## 3. Permitir el acceso de la máquina kali hacia la red interna LAN
 Para permitir que la máquina kali tenga conexión con la máquina ubuntu, se debe crear una nueva regla de paso en el firewall que permita el paso de tráfico desde la IP de kali hacia la máquina ubuntu. La configuración quedaría de la siguiente manera.
 <p align="center">
   <img src="pfsense-regla-kali-ubuntu.png" alt="Pantalla Edit Firewall Rule de pfSense con una regla Pass en la WAN para cualquier protocolo desde 192.168.100.115 hacia 192.168.1.100" width="800">
@@ -66,7 +66,7 @@ Ahora se debe verificar mediante ping si hay conexión, donde se puede apreciar 
   <em>Figura 6. Conexión mediante ping desde Kali hacia Ubuntu (192.168.1.100) a través de pfSense: 2 de 3 paquetes recibidos con TTL 63, lo que confirma que el tráfico cruza el firewall tras agregar la ruta y la regla de la WAN.</em>
 </p>
 
-## Creación de reglas para rechazo de paquetes en el firewall
+## 4. Creación de reglas para rechazo de paquetes en el firewall
 Ahora se añadirá una regla que rechace todo el tráfico proveniente de la máquina kali hacia la máquina. Para esto, se debe configurar la nueva regla de la manera que se muestra en la figura 7.
 <p align="center">
   <img src="pfsense-regla-reject-tcp.png" alt="Pantalla Edit Firewall Rule de pfSense con una regla Reject en la WAN para el protocolo TCP desde 192.168.100.115 hacia 192.168.1.100" width="800">
